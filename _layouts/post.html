@@ -2,24 +2,72 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
+<article class="post">
+  <h1>{{ page.title }}</h1>
+
+  <div id="excerpt">
+    {{ page.excerpt }}
 </div>
 
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+  <div id="full">
+    {{ content }}
 </div>
+
+<iframe height="150px" width="100%" frameborder="0" id="th" src="https://tx.teddyhyde.com/contribution/xrd.teddyhyde.io"></iframe>
+
+<div class="outer">
+<div id="thanks">
+Thank you for your contribution! Your support allows me to keep writing.
+</div>
+    </div>
+
+<div class="outer">
+<div id="myad">
+    Oh, so you don't want to contribute. Ok, please read this ad for a bit, and then you can read my blog.
+</div>
+</div>
+
+<script src="/blog.js"></script>
+  
+<div class="date">
+  Written on {{ page.date | date: "%B %e, %Y" }}
+</div>
+
+  {% include disqus.html %}
+</article>
+
+<style>
+  </style>
+
+
+<div id="wrapper">
+  <div id="personal_ad_wrapper">
+    <!-- Add content to the popup -->
+    <div id="personal_ad_popup">
+      <h2>Thanks for your visit.</h2>
+      
+      <div>
+	You aren't interesting in contributing. I get that, everyone has
+	moments where it just doesn't work. Thanks for visiting.
+      </div>
+      
+      <div>
+	Please watch this ad for 15 seconds and
+	then you'll have full access to the post.
+      </div>
+      
+      <div>
+	While you wait:
+	<a target="_new" href="https://admin.teddyhyde.com">
+	  <h3 class="underline">Why not create your own blog here?</h3>
+	</a>
+	Create your <strong>FREE Jekyll blog</strong> hosted on GitHub:
+	<strong>fast and secure over HTTPS</strong>,
+	with <strong>PWA notifications</strong> so your users never miss a post,
+	and collect <strong>cryptocurrency micro-contributions</strong> with ease.
+    </div>
+    
+  </div>
+</div>
+</div>
+
